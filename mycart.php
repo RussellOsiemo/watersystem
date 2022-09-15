@@ -14,6 +14,7 @@
 		<div class="row">
 			<div class="row-title">
 				<h7>My Cart</h7>
+				<a href="index.php" class="btn btn-primary">Continue Shopping</a>
 			</div>
 			<div class="col-lg-8">
 				<table class="table">

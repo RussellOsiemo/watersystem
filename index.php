@@ -38,10 +38,14 @@ session_start();
             
             <a href="mycart.php" class="fas fa-shopping-cart">
                 <?php
-                //get the number of modules in the cart.json 
+                //get the sum of the quantity of all items in the cart
                 $cartarray = file_get_contents("cart.json");
                 $cartarray = json_decode($cartarray, true);
-                $count = count($cartarray);
+                $count = 0;
+                foreach($cartarray as $item)
+                {
+                    $count += $item['quantity'];
+                }   
                 //if the cart.json is empty display 0
                 if ($count == 0) {
                     echo "<span id='cart-item' class='badge rounded-pill bg-danger'>0</span>";

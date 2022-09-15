@@ -58,7 +58,12 @@ if ($_SERVER["REQUEST_METHOD"]=="GET")
 			}
 		}
 		//display contents of the cart.json 
-		 echo $cartarray;
+		//  echo $cartarray;
+		//store the updated cart.json in the session
+		$_SESSION['cart'] = $cartarray;
+		//redirect to index.php
+		header("location: index.php");
+
 		
 	}
 }
