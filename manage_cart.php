@@ -5,6 +5,11 @@ session_start();
 $cartarray = file_get_contents("cart.json");
 if ($_SERVER["REQUEST_METHOD"]=="GET")
 {
+	//check if user is logged in, if not redirect to login page
+	if (!isset($_SESSION['name'])) {
+		header("location:login.php");
+	}
+	else{
 	if (isset($_GET['add'])) 
 	{
 		//get the data and store it in an array 
@@ -66,5 +71,6 @@ if ($_SERVER["REQUEST_METHOD"]=="GET")
 
 		
 	}
+}
 }
 ?>
