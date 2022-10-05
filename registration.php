@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<body>
-<div class="login-form-container">
+<body style="background-color: black;">
+<div class="login-form-container"  style="margin: auto ;  width:30%; padding:10px;">
     <form action="register.php" method="post">
         <h3>create account</h3>
         <span>Full names</span>
