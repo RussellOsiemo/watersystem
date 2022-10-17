@@ -69,6 +69,8 @@ $result = mysqli_query($link, $sql);
         </div>
         <div class="info">
           <a href="#" class="d-block">Adminstrator</a>
+          <!-- logout  -->
+          <a href="adminlogout.php" class="d-block">Logout</a>
         </div>
       </div>
 
@@ -161,7 +163,25 @@ if(mysqli_num_rows($result) > 0){
 } else{
     echo "No records matching your query were found.";
 }
-
+//change the status of the payment upon clicking the button
+if(isset($_GET['status'])){
+    //if the status is pending change it to approved
+    //get the status value 
+    $status = $_GET['status'];
+    if($status === "approved"){
+        $status = "approved";
+    }else{
+        $status = "pending";
+    }
+    $id = $_GET['id'];
+    $sql = "UPDATE payment SET status = 'approved' WHERE id = '$id'";
+    if(mysqli_query($link, $sql)){
+        echo "<script> alert('Status has been updated successfully')</script>";
+        echo "<script> window.location.href='adminrecords.php'</script>";
+        } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
+}
 
 
                   ?>

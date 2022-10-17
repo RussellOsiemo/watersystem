@@ -1,5 +1,8 @@
 <?php
 session_start();
+$name = $_SESSION['name'] ;
+ $email = $_SESSION['email'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -144,7 +147,7 @@ session_start();
                     <img src="img/bottle5.jpg" alt="image1" class="img-fluid card-img-top">
                     </div>
                 <div class="card-body">
-                    <h5 class="card-title">product1</h5>
+                    <h5 class="card-title">Waba purified water small Kejani pack</h5>
                     <h6>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -156,7 +159,7 @@ session_start();
                         <span class="price">ksh 500</span>
                     </h5>
                     <button type="submit" class="btn btn-warning my-2"name="add">Add to cart<i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="product1">
+                    <input type="hidden" name="item_name" value="Waba purified water small Kejani pack">
                     <input type="hidden" name="price" value="500">
                 </div>
             </div>
@@ -169,7 +172,7 @@ session_start();
                     <img src="img/bottle5.jpg" alt="image1" class="img-fluid card-img-top">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">product2</h5>
+                    <h5 class="card-title">Waba purified water medium office pack</h5>
                     <h6>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -181,7 +184,7 @@ session_start();
                         <span class="price">ksh 600</span>
                     </h5>
                     <button type="submit" class="btn btn-warning my-2"name="add">Add to cart<i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="product2">
+                    <input type="hidden" name="item_name" value="Waba purified water medium office pack">
                     <input type="hidden" name="price" value="600">
                 </div>
             </div>
@@ -194,7 +197,7 @@ session_start();
                     <img src="img/bottle5.jpg" alt="image1" class="img-fluid card-img-top">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">product3</h5>
+                    <h5 class="card-title">Waba purified water large family pack</h5>
                     <h6>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -206,7 +209,7 @@ session_start();
                         <span class="price">ksh 550</span>
                     </h5>
                     <button type="submit" class="btn btn-warning my-2"name="add">Add to cart<i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="product3">
+                    <input type="hidden" name="item_name" value="Waba purified water large family pack">
                     <input type="hidden" name="price" value="550">
                 </div>
             </div>
@@ -219,7 +222,7 @@ session_start();
                     <img src="img/bottle5.jpg" alt="image1" class="img-fluid card-img-top">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">product4</h5>
+                    <h5 class="card-title">Waba purified water small economy pack</h5>
                     <h6>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -231,7 +234,7 @@ session_start();
                         <span class="price">ksh 480</span>
                     </h5>
                     <button type="submit" class="btn btn-warning my-2"name="add">Add to cart<i class="fas fa-shopping-cart"></i></button>
-                    <input type="hidden" name="item_name" value="product4">
+                    <input type="hidden" name="item_name" value="Waba purified water small economy pack">
                     <input type="hidden" name="price" value="480">
                 </div>
             </div>

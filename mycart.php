@@ -4,27 +4,29 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Cart</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="style.css">
+	 <!-- Bootstrap CSS -->
+	 <link rel="stylesheet" href="css/bootstrap.min.css" >
+	<link href="css/bootstrap.min.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/bootstrap.bundle.min.js" ></script>
+	<!-- <link rel="stylesheet" href="style.css"> -->
 </head>
-<body>
+<body class="bg bg-dark">
 	<div class="container">
 		<div class="row">
 			<div class="row-title">
-				<h7>My Cart</h7>
-				<a href="index.php" class="btn btn-primary">Continue Shopping</a>
+				<h1 class="justify-content-center text-light center-align align-self-center">My Cart</h1>
+				<a href="index.php" class="btn btn-success">Continue Shopping</a>
 			</div>
-			<div class="col-lg-8">
-				<table class="table">
+			<div class="col-lg-8 border-success box-shadow card-body bg-light mt-5 justify-content-center">
+				<table  id="example2" class="table-light table-bordered table-hover">
           <thead class="text-center">
      <tr>  
       <th scope="col">serial No.</th>
       <th scope="col">item name</th>
       <th scope="col">item price</th>
       <th scope="col">quantity</th>
-      <th scope="col"></th>
+      <th scope="col">Remove Item</th>
     </tr>
   </thead>
   <tbody class="text-center">
@@ -57,7 +59,7 @@
 							<td><?php echo $value['item_name']; ?></td>
 							<td><?php echo $value['price']; ?></td>
 							<td><?php echo $value['quantity']; ?></td>
-							<td><a href='delete.php?item_name=<?php echo $value['item_name']; ?>'>Delete</a></td>
+							<td><a href='delete.php?item_name=<?php echo $value['item_name']; ?>' class="btn btn-danger">Delete</a></td>
 						<?php
 					}
 
@@ -68,12 +70,37 @@
 		  	?>
 		  	<tr>
 		  		<td colspan="4" self-align="right">Total</td>
-		  		<td><?php echo $total; ?></td>
+		  		<td><?php echo $total;
+				//store the total in a session variable
+				$_SESSION['total'] = $total;
+		  		
+				?></td>
 		  	</tr>
 	
           
  					 </tbody>
 				</table>
+				<div class="form-check">
+					<form action="checkout.php" method="post">
+  				<input class="form-check-input" type="radio" name="radiobutton" id="flexRadioDefault2" value="cash on delivery" checked>
+  						<label class="form-check-label" for="flexRadioDefault2">
+    						Cash on Delivery
+  				</label>
+				<br>
+				<p>Or</p>
+				<!--add   -->
+				<input class="form-check-input" type="radio" name="radiobutton" id="flexRadioDefault2" value="lipa na mpesa" >
+  						<label class="form-check-label" for="flexRadioDefault2">
+    						Lipa na Mpesa to 123464 and send the Mpesa code in the input below
+  				</label>
+				<br>
+				<input type="text" name="mpesacode" class="form-control" placeholder="Enter Mpesa Code for confirmation">
+					</div>
+					<button class="btn btn-primary btn-block" name= "submit">Make Purchase</button>
+				</form>
+				</div>
+				<?php
+				?>
 			</div>
 			<div class="col-lg-3">
 				
@@ -87,18 +114,17 @@
 					</style>
 				<h4>Total:</h4>
 				<h6><?php echo $total ?></h6>
-				<!-- <form>
-			<div class="form-check">
-  				<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-  						<label class="form-check-label" for="flexRadioDefault2">
-    						Cash on Delivery
-  				</label>
-					</div>
-					<button class="btn ntn-primary btn-block">Make Purchase</button>
-				</form> -->
-				</div>
+				<form>
+			
 			</div>
 		</div>
 	</div>
+	
+    <script src="js/bootstrap.min.js" ></script>
+    <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 </body>
 </html>

@@ -6,9 +6,10 @@ $cartarray = file_get_contents("cart.json");
 if ($_SERVER["REQUEST_METHOD"]=="GET")
 {
 	//check if user is logged in, if not redirect to login page
-	if (!isset($_SESSION['name'])) {
-		header("location:login.php");
-	}
+	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+		header("location: login.php");
+	   exit;
+	  }
 	else{
 	if (isset($_GET['add'])) 
 	{

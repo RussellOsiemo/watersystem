@@ -18,6 +18,7 @@ $result = mysqli_query($con, $s);
 $num = mysqli_num_rows($result);
 
 if ($num == 1) {
+    
      ?>
      <script>window.alert("sign up failed");
             window.location.href='registration.php';
@@ -26,11 +27,18 @@ if ($num == 1) {
 }
 else{
     $reg = "insert into userregistration(name , email , password , phone_number) values ('$name' , '$email' , '$password' , '$phone_number')";
+
     mysqli_query($con, $reg);
     ?>
      <script>window.alert("Success");
-            window.location.href='login.html';
+     //set session 
+    
+     window.location.href='login.html';
         </script>
     <?php
+     $_SESSION['name'] = $name;
+     $_SESSION['email'] = $email;
+     $_SESSION['password'] = $password;
+     $_SESSION['phone_number'] = $phone_number;
 }
 ?>

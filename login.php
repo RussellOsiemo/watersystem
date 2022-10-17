@@ -1,6 +1,10 @@
 <?php
 
 session_start();
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header('location:index.php');
+      exit;
+  }
 
 $con = mysqli_connect('localhost', 'root', '', 'watersystem');
 
@@ -17,7 +21,12 @@ $result = mysqli_query($con, $s);
 $num = mysqli_num_rows($result);
 
 if ($num == 1) {
-       $_SESSION['name'] = $name;
+
+   //set session variables 
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
+    
+    $_SESSION['loggedin'] = true;
        ?>
      <script>window.alert("Welcome");
             window.location.href='index.php';
@@ -30,5 +39,9 @@ else{
             window.location.href='login.html';
         </script>
     <?php
+     $_SESSION['name'] = $name;
+     $_SESSION['email'] = $email;
+     $_SESSION['password'] = $password;
+     $_SESSION['phone_number'] = $phone_number;
 }
 ?>
